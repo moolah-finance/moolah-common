@@ -1,7 +1,6 @@
 from common.config import Config
 
 class Context():
-
     Config = None
 
     def __init__(self, name, status):
