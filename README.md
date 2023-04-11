@@ -27,11 +27,9 @@
 
 In the project directory, you can run:
 
-### `python app.py`,
+### `python app.py` to run the app
 
-### `"pytest -v"`,
-
-Launches the test runner in the verbose mode.
+### `"pytest -v"` to launch the test runner in verbose mode.
 
 ## Built With
 
