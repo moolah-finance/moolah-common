@@ -1,5 +1,5 @@
-from common.exch_binance import Binance
-from common.exch_bitfinex import Bitfinex
+from moolahcommon.exch_binance import Binance
+from moolahcommon.exch_bitfinex import Bitfinex
 
 class Config():
 

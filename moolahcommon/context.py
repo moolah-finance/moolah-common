@@ -1,4 +1,4 @@
-from common.config import Config
+from moolahcommon.config import Config
 
 class Context():
 

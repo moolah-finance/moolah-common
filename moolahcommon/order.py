@@ -5,7 +5,7 @@ import uuid
 class Order():
 
     ##################################################################################################
-    def __init__(self, symbol, exchange, market, side, amount, fund, price=0, type="MARKET", orderId=None):
+    def __init__(self, symbol, exchange, market, side, amount, portfolio, price=0, type="MARKET", orderId=None):
         self._symbol = symbol
         self._exchange = exchange
         self._market = market
@@ -14,7 +14,7 @@ class Order():
         self._unfilled = amount
         self._price = price
         self._type = type
-        self._fund = fund
+        self._portfolio = portfolio
         self._status = "NEW"
         self._orderId = orderId if orderId else "{}".format(uuid.uuid4())
         self._ts = time.time()
@@ -54,8 +54,8 @@ class Order():
         return self._orderId
 
     @property
-    def Fund(self):
-        return self._fund
+    def Portfolio(self):
+        return self._portfolio
 
     @property
     def Amount(self):

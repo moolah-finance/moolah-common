@@ -1,9 +1,11 @@
+from datetime import date
+from dateutil.relativedelta import relativedelta
 import random
 import time
 import uuid
-import util as util
+import moolahcommon.util as util
 
-class Signal():
+class MSignal():
 
     ##################################################################################################
     def __init__(self, symbol, exchange, market, side, value, price, portfolio, strategy, comment=None, description=None, signalId=None, ts=None, id = None, expiry = None):
@@ -18,10 +20,10 @@ class Signal():
         self._status = "NEW"
         self._portfolio = portfolio
         self._strategy = strategy
-        self._description = description if description else "{} {} of {} on exchange {} in portfolio {}".format(side,value,symbol,exchange,market,portfolio)
         self._comment = comment
         self._signalId = signalId if signalId else "{}".format(uuid.uuid4())
-        self._expiry = expiry
+        self._description = description if description else "[ Signal/{} ] {} {} {} coin @ {} exchange {} market for portfolio '{}'".format(self._signalId,side,value,symbol,exchange,market,portfolio)
+        self._expiry = expiry if expiry else date.today() + relativedelta(months=3)
         self._ts = ts if ts else int(time.time())
 
     ##################################################################################################

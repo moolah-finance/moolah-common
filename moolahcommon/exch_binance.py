@@ -1,5 +1,5 @@
 from dotenv import load_dotenv
-from common.exchange import Exchange
+from moolahcommon.exchange import Exchange
 from collections import OrderedDict
 from binance import Client
 from binance.enums import *
